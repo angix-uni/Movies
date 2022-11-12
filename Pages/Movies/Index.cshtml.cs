@@ -24,10 +24,10 @@ namespace Movie_App.Pages.Movies
 
         public async Task OnGetAsync()
         {
-            //if (_context.Movie != null)
-            //{
-            //    Movie = await _context.Movie.ToListAsync();
-            //}
+            if (_context.Movie != null)
+            {
+                Movie = await _context.Movie.ToListAsync();
+            }
             IQueryable<string> genreQuery = from m in _context.Movie
                                             orderby m.Genre
                                             select m.Genre;
@@ -44,7 +44,7 @@ namespace Movie_App.Pages.Movies
                 movies = movies.Where(x => x.Genre == MovieGenre);
             }
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            Movie = await movies.ToListAsync();
+            //Movie = await movies.ToListAsync();
         }
 
         [BindProperty(SupportsGet = true)]
