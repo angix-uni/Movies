@@ -61,6 +61,34 @@ namespace Movie_App.Models
                 );
                 context.SaveChanges();
             }
+            //using (var context = new Director_AppContext(
+            //   serviceProvider.GetRequiredService<
+            //       DbContextOptions<Director_AppContext>>()))
+            //{
+            //    if (context == null || context.Director == null)
+            //    {
+            //        throw new ArgumentNullException("Null RazorPagesDirecotrContext");
+            //    }
+
+            //    // Look for any movies.
+            //    if (context.Director.Any())
+            //    {
+            //        return;   // DB has been seeded
+            //    }
+
+            //    context.Director.AddRange(
+            //        new Director
+            //        {
+            //            Name = "Roman",
+            //            Surname = "Polański",
+            //            Age = 12,
+            //            Award = "None"
+            //        }
+
+                    
+            //    );
+            //    context.SaveChanges();
+            //}
         }
     }
 }

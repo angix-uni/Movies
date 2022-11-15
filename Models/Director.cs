@@ -1,0 +1,24 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Movie_App.Models
+{
+    public class Director
+    {
+        public int Id { get; set; }
+        
+        [StringLength(60, MinimumLength = 2)]
+        [Required]
+        public string Name { get; set; } = string.Empty;
+        
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Surname { get; set; } = string.Empty;
+
+        [Required]
+        public int Age { get; set; }
+        
+        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
+        [StringLength(30)]
+        public string Award { get; set; } = string.Empty;
+    }
+}
