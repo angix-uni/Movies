@@ -13,11 +13,51 @@ html {
   min-height: 100%;
 }
 
+header {
+    background-color: #121212;
+}
 body {
   margin-bottom: 60px;
-  background-color: #ffffff
+  background-color: #000000;
 }
 
 nav{
-    background-color: #b6ff00
+    background-color: #121212;
+}
+
+.nav-link {
+    color: #eeeeee;
+}
+
+h2 {
+    color: #eeeeee;
+}
+
+h3 {
+    color: #eeeeee;
+}
+
+h4 {
+    color: #eeeeee;
+}
+
+td {
+    color: #eeeeee;
+
+}
+
+tr{
+    color: #bcbcbc;
+}
+
+footer{
+    text-align: center;
+    color: #808080;
+    background-color: #000000;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #eeeeee;
 }

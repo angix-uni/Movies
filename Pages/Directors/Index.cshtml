@@ -5,10 +5,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>List of all directors</h2>
+<h3>Showing x results</h3>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create"><input type="button" class="btn btn-light" value="Add" /></a>
 </p>
 <table class="table">
     <thead>
@@ -44,9 +45,8 @@
                 @Html.DisplayFor(modelItem => item.Award)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id"><input type="button" class="btn btn-light" value="Edit" /></a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id"><input type="button" class="btn btn-light" value="Delete" /></a>
             </td>
         </tr>
 }
