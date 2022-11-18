@@ -2,6 +2,6 @@
 WORK IN PROGRESS
 
 Needed packages:
--**Microsoft.EntityFrameworkCore.SqlServer**,
--**Microsoft.EntityFrameworkCore.Tools**,
--**Microsoft.VisualStudio.Web.CodeGeneration.Design**.
+- **Microsoft.EntityFrameworkCore.SqlServer**,
+- **Microsoft.EntityFrameworkCore.Tools**,
+- **Microsoft.VisualStudio.Web.CodeGeneration.Design**.
