@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace Movie_App.Models
 {
@@ -16,9 +18,8 @@ namespace Movie_App.Models
 
         [Required]
         public int Age { get; set; }
-        
-        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
-        [StringLength(30)]
+
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
         public string Award { get; set; } = string.Empty;
     }
 }
