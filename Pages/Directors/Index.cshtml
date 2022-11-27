@@ -10,28 +10,36 @@
 <p>
     <a asp-page="Create"><input type="button" class="btn btn-light" value="Add" /></a>
 </p>
+<form asp-page="./Index" method="get">
+    <div>
+        <p class="searching-filter">
+           Search surname: <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-light" />
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Director[0].Name)
+                @Html.DisplayNameFor(model => model.Directors[0].Name)
             </th>
-
+            <a asp-page="./Index" asp-route-currentFilter="@Model.CurrentFilter">
             <th>
-                @Html.DisplayNameFor(model => model.Director[0].Surname)
+                @Html.DisplayNameFor(model => model.Directors[0].Surname)
             </th>
-
+            </a>
             <th>
-                @Html.DisplayNameFor(model => model.Director[0].Age)
+                @Html.DisplayNameFor(model => model.Directors[0].Age)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Director[0].Award)
+                @Html.DisplayNameFor(model => model.Directors[0].Award)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Director) {
+@foreach (var item in Model.Directors) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -53,3 +61,21 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Directors.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Directors.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Directors.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-light @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Directors.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-light @nextDisabled">
+    Next
+</a>

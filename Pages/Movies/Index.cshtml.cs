@@ -65,7 +65,7 @@ namespace Movie_App.Pages.Movies
 
             if (!string.IsNullOrEmpty(MovieGenre))
             {
-                movies = movies.Where(x => x.Genre == MovieGenre);
+                movies = movies.Where(x => x.Genre == MovieGenre).OrderBy(x => x.Id);
             }
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 

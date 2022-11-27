@@ -47,6 +47,9 @@ tr{
     color: #bcbcbc;
 }
 
+.searching-filter {
+    color: #eeeeee;
+}
 .center {
     display: block;
     margin-left: auto;
