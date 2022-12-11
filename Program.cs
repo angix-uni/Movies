@@ -11,6 +11,8 @@ builder.Services.AddDbContext<Director_AppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Director_AppContext") ?? throw new InvalidOperationException("Connection string 'Director_AppContext' not found.")));
 builder.Services.AddDbContext<Movie_AppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Movie_AppContext") ?? throw new InvalidOperationException("Connection string 'Movie_AppContext' not found.")));
+builder.Services.AddDbContext<Favorite_AppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Favorite_AppContext") ?? throw new InvalidOperationException("Connection string 'Favorite_AppContext' not found.")));
 
 var app = builder.Build();
 

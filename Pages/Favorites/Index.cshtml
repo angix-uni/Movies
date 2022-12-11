@@ -1,0 +1,43 @@
+﻿@page
+@model Movie_App.Pages.Favorites.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Favorites[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Favorites[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Favorites[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Favorites) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
